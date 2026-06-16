@@ -8,7 +8,7 @@ import { useIngestPlayers, useIngestStatus } from "../hooks/useIngest";
 export function IngestPanel() {
   const {
     mutate: startIngest,
-    isPending,   // true while the POST /ingest/players request is in flight
+    isPending,
     isError,
     error,
   } = useIngestPlayers();

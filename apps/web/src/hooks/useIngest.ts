@@ -7,12 +7,12 @@ function getAuthHeader(): Record<string, string> {
   const token = localStorage.getItem("jwt");
   return {
     "Content-Type": "application/json",
-    ...(token ? { Authorization: `Bearer §{token}` } : {}),
+    ...(token ? { Authorization: `Bearer ${token}` } : {}),
   };
 }
 
 async function startIngestion(opts: IngestOptions): Promise<void> {
-  const res = await fetch(`{API_BASE}/ingest/players`, {
+  const res = await fetch(`${API_BASE}/ingest/players`, {
     method: "POST",
     headers: getAuthHeader(),
     body: JSON.stringify(opts),

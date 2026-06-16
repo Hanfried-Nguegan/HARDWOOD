@@ -70,6 +70,7 @@ function normalizeStats(
     .map((s) => ({
       nba_player_id: nbaPlayerId,
       season: parseSeason(s.SEASON_ID),
+      team_abbreviation: s.TEAM_ABBREVIATION,
       ppg: s.PTS ?? 0,
       rpg: s.REB ?? 0,
       apg: s.AST ?? 0,

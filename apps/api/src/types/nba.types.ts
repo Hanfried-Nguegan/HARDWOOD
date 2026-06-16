@@ -69,6 +69,7 @@ export interface NormalizedPlayer {
 export interface NormalizedStat {
   nba_player_id: number;
   season: number;
+  team_abbreviation: string;
   ppg: number;
   rpg: number;
   apg: number;

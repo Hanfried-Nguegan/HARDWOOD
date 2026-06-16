@@ -72,6 +72,7 @@ export async function upsertPlayerStats(
       return {
         player_id,
         season: s.season,
+        team_abbreviation: s.team_abbreviation,
         ppg: s.ppg,
         rpg: s.rpg,
         apg: s.apg,
@@ -90,7 +91,7 @@ export async function upsertPlayerStats(
 
   const { error } = await supabase
     .from("player_stats")
-    .upsert(rows, { onConflict: "player_id, season" });
+    .upsert(rows as any[], { onConflict: "player_id, season, team_abbreviation" });
 
   if (error) {
     throw new Error(`upsertPlayerStats failed: ${error.message}`);
