@@ -9,15 +9,24 @@ export function LandingPage() {
   const { signInWithGoogle } = useAuth();
 
   return (
-    <div className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen">
+    <div className="bg-background text-on-surface antialiased overflow-x-hidden min-h-screen pt-20">
       <Navbar onLoginClick={signInWithGoogle} />
       <StatsTicker />
 
       <header className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden py-24">
-        <div className="gradient-bg" />
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(255, 107, 0, 0.05) 0%, rgba(9, 9, 9, 1) 70%)",
+          }}
+        />
 
         <div className="relative z-10 container mx-auto px-margin-desktop flex flex-col items-center text-center">
-          <div className="fade-in-up max-w-4xl mx-auto flex flex-col items-center gap-md" style={{ animationPlayState: "running" }}>
+          <div
+            className="fade-in-up max-w-4xl mx-auto flex flex-col items-center gap-md"
+            style={{ animationPlayState: "running" }}
+          >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 mb-4">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="font-data-mono text-[10px] text-primary tracking-widest uppercase">
@@ -34,8 +43,8 @@ export function LandingPage() {
 
             <p className="font-body-lg text-body-lg text-tertiary font-light max-w-2xl mt-4">
               The Bloomberg Terminal for basketball. Analyze tracking data,
-              simulate outcomes, and scout globally with unparalleled depth
-              and speed. Built for front offices that win.
+              simulate outcomes, and scout globally with unparalleled depth and
+              speed. Built for front offices that win.
             </p>
 
             <div className="flex gap-md mt-8">
@@ -49,7 +58,7 @@ export function LandingPage() {
           </div>
 
           <div
-            className="w-full max-w-6xl mt-16 fade-in-up grid grid-cols-1 md:grid-cols-12 gap-sm relative"
+            className="w-full max-w-7xl mt-16 fade-in-up grid grid-cols-1 md:grid-cols-12 gap-sm relative"
             style={{ animationPlayState: "running", animationDelay: "200ms" }}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none h-full w-full" />

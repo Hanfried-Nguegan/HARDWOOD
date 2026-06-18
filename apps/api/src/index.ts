@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import healthRoutes from "./routes/health";
 import authRoutes from "./routes/auth";
-import ingestRoutes from "./routes/injest";
+import ingestRoutes from "./routes/ingest";
 
 const app = express();
 const PORT = process.env.PORT || 3000;

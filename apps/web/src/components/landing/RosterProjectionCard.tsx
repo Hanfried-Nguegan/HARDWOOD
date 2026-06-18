@@ -1,7 +1,8 @@
 const roster = [
-  { name: "Tatum, J.", overall: 98.2 },
-  { name: "Brown, J.", overall: 94.5 },
-  { name: "Porzingis, K.", overall: 89.1 },
+  { name: "Tatum, J.", overall: 95.2 },
+  { name: "Brown, J.", overall: 90.5 },
+  { name: "White, D.", overall: 89.1 },
+  { name: "Vucevic, N.", overall: 86.1 },
 ];
 
 export function RosterProjectionCard() {
@@ -9,7 +10,9 @@ export function RosterProjectionCard() {
     <div className="col-span-12 md:col-span-4 glass-panel rounded-lg p-sm h-[320px] flex flex-col">
       <div className="flex items-center justify-between border-b border-outline-variant/20 pb-2 mb-3">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-sm bg-secondary-container" />
+          <span className="material-symbols-outlined text-secondary text-[18px]">
+            group
+          </span>
           <span className="font-label-caps text-[10px] text-tertiary">
             ROSTER PROJ
           </span>

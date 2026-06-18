@@ -1,15 +1,47 @@
 import { useEffect, useRef, useState } from "react";
 
 const LOGS = [
-  { text: "> Init synergy_data_v4...", status: "OK", statusClass: "text-green-500" },
+  {
+    text: "> Init synergy_data_v4...",
+    status: "OK",
+    statusClass: "text-green-500",
+  },
   { text: "> Fetching tracking pos: [22, 14]", status: "", statusClass: "" },
-  { text: "> WARN: Anomaly detected in USG%", status: "RECALIBRATING", statusClass: "text-primary" },
-  { text: "> Matchup sim complete: 10,000 iter", status: "READY", statusClass: "text-secondary" },
-  { text: "> Loading visualizer engine...", status: "OK", statusClass: "text-green-500" },
-  { text: "> Syncing global draft intel database...", status: "", statusClass: "" },
-  { text: "> Projections updated for class 2025", status: "SUCCESS", statusClass: "text-green-500" },
-  { text: "> Running Monte Carlo trade scenario #491", status: "RUNNING", statusClass: "text-primary animate-pulse" },
-  { text: "> Analytics node active: Seattle-1", status: "ONLINE", statusClass: "text-green-500" },
+  {
+    text: "> WARN: Anomaly detected in USG%",
+    status: "RECALIBRATING",
+    statusClass: "text-primary",
+  },
+  {
+    text: "> Matchup sim complete: 10,000 iter",
+    status: "READY",
+    statusClass: "text-secondary",
+  },
+  {
+    text: "> Loading visualizer engine...",
+    status: "OK",
+    statusClass: "text-green-500",
+  },
+  {
+    text: "> Syncing global draft intel database...",
+    status: "",
+    statusClass: "",
+  },
+  {
+    text: "> Projections updated for class 2025",
+    status: "SUCCESS",
+    statusClass: "text-green-500",
+  },
+  {
+    text: "> Running Monte Carlo trade scenario #491",
+    status: "RUNNING",
+    statusClass: "text-primary animate-pulse",
+  },
+  {
+    text: "> Analytics node active: Seattle-1",
+    status: "ONLINE",
+    statusClass: "text-green-500",
+  },
 ];
 
 const MAX_VISIBLE_LOGS = 9;
@@ -53,9 +85,13 @@ export function TerminalLogCard() {
   return (
     <div className="col-span-12 md:col-span-3 glass-panel rounded-lg p-sm h-[320px] flex flex-col">
       <div className="flex items-center justify-between border-b border-outline-variant/20 pb-2 mb-3">
-        <span className="font-label-caps text-[10px] text-tertiary">
-          TERMINAL LOG
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="font-label-caps text-[10px] text-tertiary">
+            TERMINAL LOG
+          </span>
+        </div>
+        <span className="font-data-mono text-[9px] text-tertiary/50">LIVE</span>
       </div>
 
       <div

@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { authMiddleware } from "../middleware/auth.middleware";
-import { getJobState, setJobState } from "../lib/injest-tracker";
+import { getJobState, setJobState } from "../lib/ingest-tracker";
 import { IngestOptions } from "../types/nba.types";
-import { runPlayerIngestion } from "../services/injest.service";
+import { runPlayerIngestion } from "../services/ingest.service";
 
 const router = Router();
 

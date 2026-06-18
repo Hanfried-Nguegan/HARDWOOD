@@ -19,8 +19,8 @@ import type {
   IngestResult,
   NBATeamInfo,
 } from "../types/nba.types.js";
-import { getTeamLogoUrl } from "../lib/team-logos.js";
 import { supabase } from "../db/client.js";
+import { getTeamLogoUrl } from "@hardwood/utils";
 
 const delay = (ms: number): Promise<void> =>
   new Promise((resolve) => setTimeout(resolve, ms));

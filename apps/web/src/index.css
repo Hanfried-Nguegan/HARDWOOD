@@ -124,15 +124,15 @@ body {
 }
 
 .win-bar-left {
-  transform-origin: right;
+  transform-origin: left;
   transform: scaleX(0);
   transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .win-bar-right {
-  transform-origin: left;
+  transform-origin: right;
   transform: scaleX(0);
-  transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1) 0.1s;
 }
 
 .win-bar-left.animate {
