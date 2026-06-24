@@ -36,12 +36,12 @@ function TeamDisplay({ abbreviation, isWinner }: TeamDisplayProps) {
 
   return (
     <div className="flex flex-col items-center gap-2 w-24">
-      <div className="w-24 h-24 flex items-center justify-center">
+      <div className="w-28 h-28 flex items-center justify-center">
         {logoUrl ? (
           <img
             src={logoUrl}
             alt={abbreviation}
-            className="w-20 h-20 object-contain"
+            className="w-28 h-28 object-contain"
             // fallback to abbreviation text if logo fails to load
             onError={(e) => {
               e.currentTarget.style.display = "none";

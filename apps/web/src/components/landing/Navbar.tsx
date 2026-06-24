@@ -5,11 +5,11 @@ interface NavbarProps {
 export default function Navbar({ onLoginClick }: NavbarProps) {
   return (
     <nav className="bg-background/40 backdrop-blur-xl border-b border-white/5 fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-12 md:px-16 w-full h-20 transition-all duration-300">
-      <div className="flex items-center gap-md">
+      <div className="flex items-center gap-md cursor-pointer">
         <img
           src="/logo.png"
           alt="HARDWOOD"
-          className="h-10 w-10 object-contain brightness-110"
+          className="h-12 w-12 object-contain brightness-110"
         />
         <span className="font-headline-lg text-lg font-bold text-on-surface tracking-[0.2rem] uppercase">
           HARDWOOD

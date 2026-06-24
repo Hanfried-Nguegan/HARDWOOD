@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react";
+
 const roster = [
   { name: "Tatum, J.", overall: 95.2 },
   { name: "Brown, J.", overall: 90.5 },
@@ -6,8 +8,30 @@ const roster = [
 ];
 
 export function RosterProjectionCard() {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [triggered, setTriggered] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setTriggered(true);
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="col-span-12 md:col-span-4 glass-panel rounded-lg p-sm h-[320px] flex flex-col">
+    <div
+      ref={cardRef}
+      className="col-span-12 md:col-span-4 glass-panel rounded-lg p-sm h-[320px] flex flex-col"
+    >
       <div className="flex items-center justify-between border-b border-outline-variant/20 pb-2 mb-3">
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-secondary text-[18px]">
@@ -21,7 +45,7 @@ export function RosterProjectionCard() {
       </div>
 
       <div className="flex-1 overflow-hidden">
-        {roster.map((player) => (
+        {roster.map((player, i) => (
           <div key={player.name}>
             <div className="font-data-mono text-xs text-on-surface mb-2 flex justify-between">
               <span>{player.name}</span>
@@ -30,7 +54,10 @@ export function RosterProjectionCard() {
             <div className="w-full bg-surface-container-high h-1.5 rounded-full mb-4">
               <div
                 className="bg-secondary h-1.5 rounded-full"
-                style={{ width: `${player.overall}%` }}
+                style={{
+                  width: triggered ? `${player.overall}%` : "0%",
+                  transition: `width 1.2s cubic-bezier(0.65, 0, 0.35, 1) ${i * 0.15}s`,
+                }}
               />
             </div>
           </div>
